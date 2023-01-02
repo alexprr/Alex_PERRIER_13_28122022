@@ -9,7 +9,8 @@ const Features = () => {
         <section className="features">
             <h2 className="sr-only">Features</h2>
             {features.map(feature => (
-                <FeaturesItem 
+                <FeaturesItem
+                    key={feature.key}
                     title={feature.title} 
                     paragraph={feature.paragraph}
                     image={feature.image}

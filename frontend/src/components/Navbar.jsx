@@ -1,8 +1,12 @@
+// React Router
+import { Link } from 'react-router-dom';
+
 // logo image source
 import LogoSrc from '../assets/img/argentBankLogo.png';
 
 // css
 import "../styles/navbar.css";
+
 
 const Navbar = () => {
     return (
@@ -12,10 +16,10 @@ const Navbar = () => {
             </a>
             <h1 className="sr-only">Argent Bank</h1>
             <div>
-                <a className='main-nav-item' href="/">
+                <Link className='main-nav-item' to="/login">
                     <i className="fa fa-user-circle"></i>
                     &nbsp;Sign In
-                </a>
+                </Link>
             </div>
         </nav>
     )

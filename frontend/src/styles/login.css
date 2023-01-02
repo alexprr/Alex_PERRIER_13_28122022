@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    height: 82vh;
+}
+
+.bg-dark {
+    background-color: #12002b;
+}

@@ -5,6 +5,7 @@ import Security from "../assets/img/icon-security.png";
 
 export const features = [
   {
+    key: 1,
     title: "You are our #1 priority",
     paragraph:
       "Need to talk to a representative? You can get in touch through our 24/7 chat or through a phone call in less than 5 minutes.",
@@ -12,6 +13,7 @@ export const features = [
     alt: "Chat Icon",
   },
   {
+    key: 2,
     title: "More savings means higher rates",
     paragraph:
       "The more you save with us, the higher your interest rate will be!",
@@ -19,6 +21,7 @@ export const features = [
     alt: "Money Icon",
   },
   {
+    key: 3,
     title: "Security you can trust",
     paragraph:
       "We use top of the line encryption to make sure your data and money is always safe.",
