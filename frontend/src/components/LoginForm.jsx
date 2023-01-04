@@ -1,4 +1,4 @@
-import '../styles/form.css'
+import '../styles/login.css'
 
 const LoginForm = () => {
     return (

@@ -2,7 +2,7 @@ import FeaturesItem from "./FeaturesItem"
 
 import { features } from "../utils/constants"
 
-import "../styles/features.css"
+import "../styles/home.css"
 
 const Features = () => {
     return (

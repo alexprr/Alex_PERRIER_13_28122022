@@ -1,4 +1,4 @@
-import "../styles/features.css"
+import "../styles/home.css"
 
 const FeaturesItem = ({ title, paragraph, image, alt}) => {
     return (
