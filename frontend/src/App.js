@@ -3,14 +3,19 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 
+import { Provider } from "react-redux";
+import store from "./app/store";
+
 const App = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/login" element={<Login />} />
-        <Route exact path="/profile" element={<Profile />} />
-      </Routes>
+      <Provider store={store}>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/profile" element={<Profile />} />
+        </Routes>
+      </Provider>
     </BrowserRouter>
   );
 };
