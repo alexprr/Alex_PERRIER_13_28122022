@@ -10,22 +10,28 @@ const loginSlice = createSlice({
   name: "login",
   initialState,
   reducers: {
-    loginPending: (state) => {
+    pending: (state) => {
       state.isLoading = true;
+      state.error = "";
     },
-    loginSuccess: (state) => {
+    success: (state) => {
       state.isLoading = false;
       state.isLogged = true;
+      state.error = "";
     },
-    loginError: (state, action) => {
+    error: (state, action) => {
       state.isLoading = false;
       state.error = action.payload;
+    },
+    logout: (state) => {
+      state.isLogged = false;
+      state.error = "";
     },
   },
 });
 
 export const { actions, reducer } = loginSlice;
 
-export const { loginPending, loginSuccess, loginError } = actions;
+export const { pending, success, error, logout } = actions;
 
 export default reducer;
