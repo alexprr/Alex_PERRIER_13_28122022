@@ -1,10 +1,23 @@
 import axios from "axios";
 import BASE_URL from "../utils/config";
 
-const loginApi = async (endpoint, credentials) => {
-  const { data } = await axios.post(`${BASE_URL}/${endpoint}`, credentials);
+/**
+ *
+ * @param { string } endpoint api endpoint
+ * @param { object } user user's credentials
+ * @returns { object } response data
+ */
+export const userLogin = async (endpoint, credentials) => {
+  const response = await axios.post(`${BASE_URL}/${endpoint}`, credentials);
+  const token = response.data.body.token;
 
-  return data;
+  // store token in localStorage
+  window.localStorage.setItem("token", token);
+
+  // sets authorization headers for all requests
+  if (token) axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+  console.log(`JWT Token: ${token}`);
+
+  console.log(response.data);
+  return response.data;
 };
-
-export default loginApi;

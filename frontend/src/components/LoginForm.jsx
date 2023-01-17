@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router'
 import { useSelector, useDispatch } from 'react-redux'
 import * as loginActions from '../features/loginSlice'
-import loginApi from '../api/api'
+import { userLogin } from '../api/api'
 
 const LoginForm = () => {
     const { isLoading, error } = useSelector((state) => state.login)
@@ -32,7 +32,7 @@ const LoginForm = () => {
 
         dispatch(loginActions.pending())
         try {
-            await loginApi('login', credentials).then((data) => console.log(data))
+            await userLogin('login', credentials)
             dispatch(loginActions.success());
             navigate("/profile")  
         } catch (error) {
