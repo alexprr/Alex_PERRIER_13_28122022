@@ -21,3 +21,13 @@ export const userLogin = async (endpoint, credentials) => {
   console.log(response.data);
   return response.data;
 };
+
+/**
+ *
+ * @param { string } endpoint api endpoint
+ * @returns { object } response data
+ */
+export const getUserProfile = async (endpoint) => {
+  const response = await axios.post(`${BASE_URL}/${endpoint}`);
+  return response.data;
+};
