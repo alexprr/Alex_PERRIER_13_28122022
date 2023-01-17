@@ -5,6 +5,7 @@ import Profile from "./pages/Profile";
 
 import { Provider } from "react-redux";
 import store from "./app/store";
+import PrivateRoutes from "./utils/PrivateRoutes";
 
 const App = () => {
   return (
@@ -13,7 +14,11 @@ const App = () => {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/login" element={<Login />} />
-          <Route exact path="/profile" element={<Profile />} />
+
+          <Route element={<PrivateRoutes />}>
+            <Route element={<Profile />} path="/profile" />
+          </Route>
+          {/* <Route exact path="/profile" element={<Profile />} /> */}
         </Routes>
       </Provider>
     </BrowserRouter>
