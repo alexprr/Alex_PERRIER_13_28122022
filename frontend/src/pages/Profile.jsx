@@ -8,17 +8,29 @@ import { Link } from 'react-router-dom';
 // logo image source
 import LogoSrc from '../assets/img/argentBankLogo.png';
 
-// Hook
-import { useNavigate } from 'react-router'
-
 // Redux
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import * as loginActions from '../features/loginSlice'
+import * as userActions from '../features/userSlice'
+
+// to fetchi user profile
+import { getUserProfile } from "../api/api";
 
 const Profile = () => {
-  const { logout } = useSelector((state) => state.login)
-  let navigate = useNavigate();
   const dispatch = useDispatch();
+  const { firstName, lastName } = useSelector((state) => state.user)
+
+  getUserProfile('/profile').then((data) => {
+    dispatch(userActions.firstName(data.body.firstName))
+    dispatch(userActions.lastName(data.body.lastName))
+  }).catch(error => dispatch(userActions.error(error.response.data.message)))
+
+  const handleLogout = () => {
+    dispatch(loginActions.logout())
+    dispatch(userActions.logout())
+    window.localStorage.removeItem("token");
+  }
+
   return (
     <div>
         <nav className='main-nav'>
@@ -29,9 +41,9 @@ const Profile = () => {
             <div>
                 <Link className='main-nav-item' to="/profile">
                     <i className="fa fa-user-circle"></i>
-                    &nbsp;Tony
+                    &nbsp;{firstName}
                 </Link>
-                <Link className='main-nav-item' to="/" onClick={() => dispatch(loginActions.logout())}>
+                <Link className='main-nav-item' to="/" onClick={handleLogout}>
                     <i className="fa fa-sign-out"></i>
                     &nbsp;Sign Out
                 </Link>
@@ -39,7 +51,7 @@ const Profile = () => {
         </nav>
         <main className="main bg-dark">
           <div className="header">
-            <h1>Welcome back <br />Tony Jarvis !</h1>
+            <h1>Welcome back <br />{`${firstName} ${lastName} !`}</h1>
             <button className="edit-button">Edit Name</button>
           </div>
             <Account />
