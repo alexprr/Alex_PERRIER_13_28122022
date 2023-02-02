@@ -31,3 +31,8 @@ export const getUserProfile = async (endpoint) => {
   const response = await axios.post(`${BASE_URL}/${endpoint}`);
   return response.data;
 };
+
+export const updateUserProfile = async (endpoint, newUserName) => {
+  const response = await axios.put(`${BASE_URL}/${endpoint}`, newUserName);
+  return response.data;
+};
