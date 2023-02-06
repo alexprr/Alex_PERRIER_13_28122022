@@ -1,5 +1,6 @@
 import '../styles/profile.css'
 
+// returns React Component : Account
 const Account = () => {
   return (
     <div>

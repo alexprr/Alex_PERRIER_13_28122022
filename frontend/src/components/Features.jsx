@@ -4,6 +4,7 @@ import { features } from "../utils/constants"
 
 import "../styles/home.css"
 
+// returns a list of React Component
 const Features = () => {
     return (
         <section className="features">

@@ -1,6 +1,7 @@
 // css
 import "../styles/home.css"
 
+// returns React Component : Hero
 const Hero = () => {
     return (
         <div className="hero">

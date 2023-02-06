@@ -7,7 +7,7 @@ import LogoSrc from '../assets/img/argentBankLogo.png';
 // css
 import "../styles/navbar.css";
 
-
+// returns React Component : Navbar
 const Navbar = () => {
     return (
         <nav className='main-nav'>

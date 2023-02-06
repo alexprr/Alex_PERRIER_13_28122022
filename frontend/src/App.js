@@ -18,7 +18,6 @@ const App = () => {
           <Route element={<PrivateRoutes />}>
             <Route element={<Profile />} path="/profile" />
           </Route>
-          {/* <Route exact path="/profile" element={<Profile />} /> */}
         </Routes>
       </Provider>
     </BrowserRouter>

@@ -1,5 +1,6 @@
 import "../styles/home.css"
 
+// returns React Component : Features item
 const FeaturesItem = ({ title, paragraph, image, alt}) => {
     return (
         <div className="feature-item">
