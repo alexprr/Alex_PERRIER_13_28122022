@@ -92,7 +92,7 @@ const Profile = () => {
   console.log(newUserName);
 
   return (
-    <div>
+    <div className="bg-dark">
         <nav className='main-nav'>
             <a className='main-nav-logo' href="/">
                 <img className='main-nav-logo-image' src={LogoSrc} alt="Argent Bank Logo" />
@@ -109,7 +109,7 @@ const Profile = () => {
                 </Link>
             </div>
         </nav>
-        <main className="main bg-dark">
+        <main className="main-profile bg-dark">
           <div className="header">
             <h1>Welcome back <br />{`${firstName} ${lastName} !`}</h1>
             <form className="header-form" onSubmit={applyUserNameChanges}>
